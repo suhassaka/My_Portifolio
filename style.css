@@ -1,0 +1,1240 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system,sans-serif;
+}
+:root {
+    --bg-color:#fff;
+    --snd-bg-color:#BFD7ED;
+    --text-color:#000;
+    --main-color:#003B73;
+}
+html{
+    font-size: 62.5%;      /* 62.5 * 16 = 10px */
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;    /* 1rem =10px |  padding: 10*10 9% is related to parent |2*10 20*/
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding:2rem 5%;
+    background:var(--main-color);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+.logo{
+    font-size: 2rem;
+    color: var(--bg-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    transform:scale(1.05);
+}
+.navbar a{
+
+    font-size: 2rem;
+    color: var(--bg-color);
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active{
+    color:var(--text-color);
+}
+#menu-icon{
+    font-size:3.6rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    display: none;
+}
+/* ---------------------------------------------------Home------------------------------------------ */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-img img{
+    width: 25vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    animation: floatImage 4s ease-in-out infinite;
+    transition: 0.4s ease;
+}
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+@keyframes floatImage{
+    0%{
+        transform : translateY(0);
+    }
+    50%{
+        transform : translateY(-2.4rem);
+    }
+    100%{
+        transform : translateY(0);
+    }
+}
+.home-content{
+    margin-left: 5rem;
+}
+.home-content h3{
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+}
+.home-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color:var(--main-color);
+    line-height : 1.3;
+}
+.home-content p{
+    font-size: 2rem;
+}
+.social-media a{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+.social-media a:hover{
+    transform:scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background:var(--main-color);
+    border-radius: 4rem;
+    box-shadow: none;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.btn:hover{
+    box-shadow: 0 0 1.6rem var(--main-color);
+}
+/* --------------------------------------------------------About-------------------------------------------- */
+.about{
+    display: flex;
+    /* justify-content: center;  */
+    /* align-items: center; */
+    gap: 8rem;
+    background-color: var(--snd-bg-color);
+}
+.education,.certification{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    
+}
+.education .edu,.certification .certi{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.education .btech,.diploma,.tenth ,.certification .uiux ,.post, .python{
+    /* border: 1px solid red; */
+    width: 45rem;
+    height: 10rem;
+    background-color:var(--bg-color);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    color: var(--text-color);
+}
+.education .btech h4,.diploma h4,.tenth h4, .certification .uiux h4,.post h4,.python h4{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom:1rem ;
+    color: var(--text-color);
+    
+}
+.education .btech .btechyear,.diplomayear,.tenthyear , .certification .uiux .uiuxyear, .post .postyear, .python .pyyear{
+    font-size: 1.8rem;
+    margin-bottom:1rem ;
+    font-weight:700;
+    color: var(--main-color);
+}
+.education .btech .btechstream,.diploma .diplomastream,.tenth tenthstream ,.certification .uiux  .uiuxplace, .post .postplace, .python .pyplace{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.btech:hover,.diploma:hover,.tenth:hover ,.uiux:hover,.post:hover,.python:hover{
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    transition: all 0.7s ease;
+}
+.btech:hover .btechyear ,.diploma:hover .diplomayear ,.tenth:hover .tenthyear ,.uiux:hover .uiuxyear,.post:hover .postyear,.python:hover .pyyear{
+    color: var(--bg-color) !important; /* Ensure the color changes on hover */
+    transition: all 0.7s ease;
+}
+.btech:hover .btechstream ,.diploma:hover .diplomastream ,.tenth:hover .tenthstream ,.uiux:hover .uiuxplace,.post:hover .postplace,.python:hover .pyplace{
+    color: var(--bg-color) !important; /* Ensure the color changes on hover */
+    transition: all 0.7s ease;
+}
+.btech:hover h4 ,.diploma:hover h4 ,.tenth:hover h4 ,.uiux:hover h4,.post:hover h4,.python:hover h4{
+    color: var(--bg-color) !important; /* Ensure the color changes on hover */
+    transition: all 0.7s ease;
+}
+/* --------------------------------------------Skills--------------------------------------------- */
+
+.myskill{
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 4rem;
+}
+/* .button-main{
+    display: flex;
+    justify-content: center;
+    
+}
+.button-group{
+    display: flex;
+    margin:5rem 0;
+    background-color: var(--snd-bg-color);
+    padding: 1rem 1.5rem;
+    border-radius: 4rem;
+    
+
+}
+.button-group button{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main-color);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background-color: var(--snd-bg-color);
+    
+    
+}
+.button-group button.active {
+    background-color:var(--main-color);
+    color:var(--bg-color);
+    border-radius: 3rem;
+    
+    transition: all 0.8s ease;
+} */
+
+.skills-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+
+}
+.skill-div{
+    background-color: var(--main-color);
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 4rem;
+}
+.skill-div img{
+    height: 7rem;
+    width: 7rem;
+    margin: 2.2rem 0rem;
+}
+.skill-div p{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--bg-color);
+}
+
+/* ---------------------------------------------------------------My works--------------------------------------------------- */
+.work{
+    background-color: var(--snd-bg-color);
+}
+.mywork{
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 4rem;
+    
+}
+/* .button-main-work{
+    display: flex;
+    justify-content: center;
+    
+}
+.button-group-work{
+    display: flex;
+    margin:5rem 0;
+    background-color: var(--main-color);
+    padding: 1rem 1.5rem;
+    border-radius: 4rem;
+    
+
+}
+.button-group-work button{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--bg-color);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background-color: var(--main-color);
+    
+    
+}
+.button-group-work button.active {
+    background-color:var(--snd-bg-color);
+    color:var(--text-color);
+    border-radius: 3rem;
+    
+    transition: all 0.8s ease;
+}
+  */
+
+
+.work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 7rem;
+}
+
+.work-div {
+    position: relative;
+   
+    height: 45rem;
+    width: 45rem;
+    overflow: hidden;  /* Ensures content stays within the box */
+    border: 2px solid var(--bg-color);
+    padding: 2rem 2rem;
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    transition: transform 0.4s ease,border 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-div img {
+    height: 25rem;
+    width: 40rem;
+    transition: opacity 0.4s ease; /* Smooth image opacity transition */
+    box-shadow: 1rem 1rem 2rem var(--main-color);
+    margin-bottom: 2rem;
+   
+    
+}
+.work-title{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    
+}
+.work-desc{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.tools-used {
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-align: center;
+}
+.work-icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.4s ease; /* Smooth transition for opacity */
+}
+
+.work-icon a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--bg-color);
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color change */
+}
+
+.work-div:hover .work-icon {
+    opacity: 0.9;  /* Smoothly appear */
+    
+}
+
+.work-icon a:hover {
+    transform: scale(1.4);  /* Smooth scaling effect */
+    color: var(--bg-color);  /* Optional color change on hover */
+}
+
+.work-div:hover {
+    transform: scale(1.05); /* Slight scaling effect */
+    border: 2px solid var(--main-color);
+}
+
+/* ---------------------------------------------------------Contact------------------------------------------------------ */
+
+.contact-grid{
+    display: flex;
+    gap: 4rem;
+    height: auto;
+}
+.contact-form{
+    width: 50%;
+    padding: 3rem;
+    background-color: var(--snd-bg-color);
+    border-radius: 2rem;
+}
+
+.contact-form h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom:1.5rem;
+}
+.contact-form p{
+    font-size: 1.7rem;
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.contact-form input{
+    border: 1px solid var(--text-color);
+    width:47%;
+    padding: 1.4rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+}
+.contact-form select{
+    width: 97%;
+    margin-bottom: 1rem;
+    padding:1.4rem ;
+    border-radius: 0.5rem;
+    border: 1px solid var(--text-color);
+    font-size: 1.5rem;
+}
+.contact-form textarea{
+    width: 97%;
+    border: 1px solid var(--text-color);
+    border-radius: 1rem;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.contact-form button{
+    width: 35%;
+    padding: 1.4rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+.contact-form button:hover{
+    background-color: var(--bg-color);
+    color: var(--snd-bg-color);
+}
+.contact-link{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 5rem;
+    
+}
+.contact-link .whatsup{
+    display: flex;
+    gap: 1rem;
+
+}
+.whatsup{
+    display: flex;
+    align-items: center;
+}
+.whatsup .contact-icon{
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+.whatsup .contact-info .name{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    
+}
+.whatsup .contact-info .desc a{
+    color: var(--text-color);
+     font-size: 1.8rem;
+     transition: color 0.4s ease;
+    
+}
+.contact-info .desc a:hover{
+    color: var(--main-color);
+}
+/* -------------------------------------------footer----------------------------------------------------- */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    background-color: var(--main-color);
+    padding: 5rem;
+}
+.footer-info{
+    font-size: 1.8rem;
+    color: var(--bg-color);
+    margin-bottom: 2rem;
+}
+.footer-icon a{
+    color: var(--bg-color);
+    font-size: 3rem;
+    margin-right: 4rem;
+}
+
+
+/* -------------------------------------------------------responsive---------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 2rem 4%;
+    }
+    section{
+        padding: 8rem 8% 2rem;
+    }
+    .home-content{
+        margin-left: 4.5rem;
+    }
+    .home-content h3{
+        font-size: 3.3rem;
+    }
+    .home-content h1{
+        font-size: 3.8rem;
+    }
+
+    /* About */
+    .education .edu,.certification .certi{
+        font-size: 2.5rem;
+    }
+    .education .btech,.diploma,.tenth ,.certification .uiux ,.post, .python{
+        /* border: 1px solid red; */
+        width: 38rem;
+        height: auto;
+    }
+
+    /* skills */
+
+    /* works */
+    .work-grid{
+        gap: 5.5rem;
+    }
+    .work-div{
+        height: 37rem;
+        width: 37rem;
+        padding: 1.8rem 1.8rem;
+    }
+    .work-div img{
+        height: 20rem;
+        width: 32rem;
+        box-shadow: 0.9rem 0.9rem 1.8rem var(--main-color);
+        margin-bottom: 1.8rem;
+    }
+    .work-title{
+        font-size: 2.8rem;
+        margin-bottom: 0.9rem;
+    }
+    .work-desc{
+        font-size: 1.4rem;
+    }
+    .tools-used{
+        font-size: 1.6rem;
+    }
+
+
+    /* contact */
+    .contact-grid{
+        gap: 3.6rem;
+    }
+    .contact-form{
+        padding: 2.7rem;
+        border-radius: 1.9rem;
+    }
+    .contact-form h2{
+        font-size: 3.7rem;
+        margin-bottom: 1.4rem;
+    }
+    .contact-form p{
+        font-size: 1.5rem;
+        margin-bottom: 1.8rem;
+    }
+    .contact-form input{
+        padding: 1.3rem;
+        border-radius: 0.45rem;
+        margin-bottom: 0.9rem;
+        margin-right: 0.9rem;
+        font-size: 1.3rem;
+    }
+    .contact-form select{
+        margin-bottom: 0.9rem;
+        padding: 1.25rem;
+        border-radius: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .contact-form textarea{
+        border-radius: 0.9rem;
+        padding: 1.3rem;
+        font-size: 1.3rem;
+        margin-bottom: 2.3rem;
+    }
+    .contact-form button{
+        padding: 1.3rem;
+        border-radius: 2.7rem;
+
+    }
+    .contact-link {
+        padding: 2.8rem 4.6rem;
+    }
+    .contact-link .whatsup{
+        gap: 0.85rem;
+    }
+    .whatsup{
+        display: flex;
+        align-items: center;
+    }
+    .whatsup .contact-icon{
+        margin-bottom: 1.8rem;
+    }
+    .whatsup .contact-icon i{
+        font-size: 4rem;
+    }
+    .whatsup .contact-info .name{
+        font-size: 1.2rem;
+        margin-bottom: 0.9rem;
+    }
+    .whatsup .contact-info .desc a{
+        font-size: 1.6rem
+    }
+}
+
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+    .navbar a {
+        font-size: 1.8rem;
+        margin-left: 3rem;
+    }
+
+    /* Home */
+    section{
+        padding: 7rem 6.5% 1.8rem;
+    }
+    .home-content{
+        margin-left: 4rem;
+    }
+    .home-content h3{
+        font-size: 3rem;
+    }
+    .home-content h1{
+        font-size: 3.5rem;
+    }
+
+    /* About */
+    .about{
+        gap: 6rem;
+    }
+    .education .edu,.certification .certi{
+        font-size: 2.1rem;
+    }
+    .education .btech,.diploma,.tenth ,.certification .uiux ,.post, .python{
+        
+        width: 30rem;
+        height: auto;
+    }
+
+    /* Skill */
+    .myskill{
+        font-size: 3.6rem;
+    }
+    .button-group {
+        margin: 4.5rem 0;
+        padding: 0.9rem 1.35rem;
+    }
+    .button-group button{
+        font-size: 1.65rem;
+        padding: 0.9rem 1.8rem;
+    }
+    .button-group button.active  {
+        border-radius: 2.7rem;
+    } 
+    .skills-grid{
+        gap:3rem;
+    }
+    .skill-div{
+        height: 13rem;
+        width: 13rem;
+        border-radius: 3rem;
+    }
+    .skill-div img{
+        height: 6.5rem;
+        width: 6.5rem;
+        margin: 1.8rem 0rem;
+    }
+    .skill-div p{
+        font-size: 1.7rem;
+    }
+
+    /* works */
+    .mywork{
+        font-size: 3.6rem;
+    }
+    .button-group-work {
+        margin: 4.5rem 0;
+        padding: 0.9rem 1.35rem;
+    }
+    .button-group-work button{
+        font-size: 1.65rem;
+        padding: 0.9rem 1.8rem;
+    }
+    .button-group-work button.active  {
+        border-radius: 2.7rem;
+    } 
+    .work-grid{
+        gap: 4.0rem;
+    }
+    .work-div{
+        height: 30rem;
+        width: 30rem;
+        padding: 1.55rem 1.55rem;
+    }
+    .work-div img{
+        height: 16rem;
+        width: 27rem;
+        box-shadow: 0.75rem 0.75rem 1.4rem var(--main-color);
+        margin-bottom: 1.55rem;
+    }
+    .work-title{
+        font-size: 2.45rem;
+        margin-bottom: 0.75rem;
+    }
+    .work-desc{
+        font-size: 1.23rem;
+    }
+    .tools-used{
+        font-size: 1.4rem;
+    }
+    /* contact */
+    .contact-grid{
+        gap: 2.8rem;
+    }
+    .contact-form{
+        width: 60%;
+        padding: 2.4rem;
+        border-radius: 1.6rem;
+    }
+    .contact-form h2{
+        font-size: 2.8rem;
+        margin-bottom: 1.1rem;
+    }
+    .contact-form p{
+        font-size: 1.1rem;
+        margin-bottom: 1.3rem;
+    }
+    .contact-form input{
+        padding: 1.2rem;
+        border-radius: 0.25rem;
+        margin-bottom: 0.65rem;
+        margin-right: 0.45rem;
+        font-size: 1.2rem;
+    }
+    .contact-form select{
+        margin-bottom: 0.65rem;
+        padding: 1rem;
+        border-radius: 0.2rem;
+        font-size: 1.05rem;
+    }
+    .contact-form textarea{
+        border-radius: 0.65rem;
+        padding: 1.05rem;
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+    .contact-form button{
+        padding: 1.05rem;
+        border-radius: 2.3rem;
+        font-size: 1.2rem;
+
+    }
+    .contact-link {
+        padding: 2.3rem 2.3rem;
+        width: 40%;
+    }
+    .contact-link .whatsup{
+        gap: 0.65rem;
+    }
+    .whatsup{
+        display: flex;
+        align-items: center;
+    }
+    .whatsup .contact-icon{
+        margin-bottom: 1.5rem;
+    }
+    .whatsup .contact-icon i{
+        
+        font-size: 3rem;
+    }
+    .whatsup .contact-info .name{
+        font-size: 1.3rem;
+        margin-bottom: 0.65rem;
+    }
+    .whatsup .contact-info .desc a{
+        font-size: 1.5rem
+    }
+
+}
+
+/* Mobile Responsive */
+@media (max-width: 730px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--snd-bg-color);
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar a {
+        display: block;
+        text-align: center;
+        margin: 1.5rem 0;
+        font-size: 2rem;
+        color: var(--text-color);
+    }
+
+    .navbar.active {
+        height: 300px;
+        padding: 2rem 0;
+        
+    }
+    .navbar a:hover ,.navbar a.active{
+        color: var(--main-color);
+    }
+
+    /* hime */
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    section{
+        padding: 6rem 6% 1.6rem;
+    }
+    .home-content{
+        margin-left: 4rem;
+    }
+    .home-content h3{
+        font-size: 2.8rem;
+    }
+    .home-content h1{
+        font-size: 3.3rem;
+    }
+    .home-content p{
+        font-size: 1.7rem;
+    }
+
+    /* About */
+    .about{
+        display: flex;
+        flex-direction: column;
+    }
+    .education .edu,.certification .certi{
+        font-size: 2.1rem;
+    }
+    .education .btech,.diploma,.tenth ,.certification .uiux ,.post, .python{
+        /* border: 1px solid red; */
+        width: auto;
+        height: auto;
+        text-align: center;
+}
+
+    /* Skill */
+    .myskill{
+        font-size: 3.3rem;
+    }
+    .button-group{
+        margin: 4.2rem 0;
+        padding: 0.8rem 1.25rem;
+    }
+    .button-group button{
+        font-size: 1.55rem;
+        padding: 0.8rem 1.7rem;
+    }
+    .button-group button.active {
+        border-radius: 2.5rem;
+    } 
+    .skills-grid{
+        gap:2.3rem;
+    }
+    .skill-div{
+        height: 11rem;
+        width: 11rem;
+        border-radius: 2.5rem;
+    }
+    .skill-div img{
+        height: 4.5rem;
+        width: 4.5rem;
+        margin: 1.4rem 0rem;
+    }
+    .skill-div p{
+        font-size: 1.5rem;
+    }
+
+    /* works */
+    .mywork{
+        font-size: 3.3rem;
+    }
+    .button-group-work {
+        margin: 4.2rem 0;
+        padding: 0.8rem 1.25rem;
+    }
+    .button-group-work button{
+        font-size: 1.55rem;
+        padding: 0.8rem 1.7rem;
+    }
+    .button-group-work button.active  {
+        border-radius: 2.5rem;
+    } 
+    .work-grid{
+        gap: 3rem;
+    }
+    .work-div{
+        height: 23rem;
+        width: 23rem;
+        padding: 1.15rem 1.15rem;
+    }
+    .work-div img{
+        height: 10rem;
+        width: 18rem;
+        box-shadow: 0.35rem 0.35rem 0.9rem var(--main-color);
+        margin-bottom: 1rem;
+    }
+    .work-title{
+        font-size: 2rem;
+        margin-bottom: 0.45rem;
+    }
+    .work-desc{
+        font-size: 0.8rem; 
+    }
+    .tools-used{
+        font-size: 1rem;
+    }
+
+    /* Contact */
+
+    .contact-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form{
+        width: 80%;
+        padding: 2.5rem;
+        border-radius: 1.7rem;
+    }
+    .contact-form h2{
+        font-size: 3.2rem;
+        margin-bottom: 1.2rem;
+    }
+    .contact-form p{
+        font-size: 1.5rem;
+        margin-bottom: 1.8rem;
+    }
+    .contact-form input{
+        padding: 1.2rem;
+        border-radius: 0.4rem;
+        margin-bottom: 0.8rem;
+        margin-right: 0.7rem;
+        font-size: 1.2rem;
+    }
+    .contact-form select{
+        margin-bottom: 0.8rem;
+        padding: 1.2rem;
+        border-radius: 0.3rem;
+        font-size: 1.3rem;
+    }
+    .contact-form textarea{
+        border-radius: 1rem;
+        padding: 1.2rem;
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    .contact-form button{
+        padding: 1.2rem;
+        border-radius: 3rem;
+        font-size: 1.3rem;
+
+    }
+    .contact-link {
+        padding: 3rem 5rem;
+        width: 80%;
+        
+        
+    }
+    .contact-link .whatsup{
+        gap: 0.65rem;
+    }
+    .whatsup{
+        display: flex;
+        align-items: center;
+    }
+    .whatsup .contact-icon{
+        margin-bottom: 2rem;
+    }
+    .whatsup .contact-icon i{
+        
+        font-size: 4rem;
+    }
+    .whatsup .contact-info .name{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .whatsup .contact-info .desc a{
+        font-size: 1.8rem
+    }
+
+}
+
+@media(max-width:500px){
+    /* Home */
+    section {
+        padding: 5rem 5% 1.4rem;
+    }
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .home-content h3{
+        font-size: 2.4rem;
+    }
+    .home-content h1{
+        font-size: 2.7rem;
+    }
+    .home-content p{
+        font-size: 1.3rem;
+    }
+    .social-media a{
+        width: 30px;
+        height: 30px;
+        font-size: 1.5rem;
+        /* margin: ; */
+    }
+    .btn{
+        padding: 0.5rem 1.4rem;
+        font-size: 1rem;
+    }
+
+    /* about */
+    .education, .certification{
+        gap: 1.8rem;
+    }
+    .education .edu,.certification .certi{
+        font-size: 1.8rem;
+    }
+    .education .btech,.diploma,.tenth ,.certification .uiux ,.post, .python{
+        /* border: 1px solid red; */
+        width: auto;
+        height: auto;
+    }
+    .education .btech h4,.diploma h4,.tenth h4, .certification .uiux h4,.post h4,.python h4{
+        font-size: 1.7rem;
+        
+    }
+    .education .btech .btechyear,.diplomayear,.tenthyear , .certification .uiux .uiuxyear, .post .postyear, .python .pyyear{
+        font-size: 1.5rem;
+    }
+    .education .btech .btechstream,.diplomastream,tenthstream ,.certification .uiux .uiuxplace, .post .postplace, .python .pyplace{
+        font-size: 1.3rem;
+    }
+
+     /* Skill */
+     .myskill{
+        font-size: 3.0rem;
+    }
+    .button-group{
+        margin: 3.9rem 0;
+        padding: 0.65rem 1.05rem;
+    }
+    .button-group button{
+        font-size: 1.35rem;
+        padding: 0.65rem 1.5rem;
+    }
+    .button-group button.active {
+        border-radius: 2.1rem;
+    } 
+     .skills-grid{
+        gap:1.8rem;
+    }
+     .skill-div{
+        height: 8rem;
+        width: 8rem;
+        border-radius: 2rem;
+    }
+    .skill-div img{
+        height: 3.5rem;
+        width: 3.5rem;
+        margin: 1.1rem 0rem;
+    }
+    .skill-div p{
+        font-size: 1.2rem;
+    }
+
+    /* work */
+    .mywork{
+        font-size: 3.0rem;
+    }
+    .button-group-work {
+        margin: 3.9rem 0;
+        padding: 0.65rem 1.05rem;
+    }
+    .button-group-work button{
+        font-size: 1.35rem;
+        padding: 0.65rem 1.5rem;
+    }
+    .button-group-work button.active  {
+        border-radius: 2.1rem;
+    } 
+
+
+
+    /* Contact */
+
+    .contact-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form{
+        width: 100%;
+        padding: 2rem;
+        border-radius: 1.7rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-form h2{
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+    .contact-form p{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    .contact-form input{
+        padding: 1rem;
+        border-radius: 0.3rem;
+        margin-bottom: 0.7rem;
+        margin-right: 0.5trem;
+        font-size: 1rem;
+        width: 96%;
+    }
+    .contact-form select{
+        margin-bottom: 0.7rem;
+        padding: 1rem;
+        border-radius: 0.3rem;
+        font-size: 1.1rem;
+    }
+    .contact-form textarea{
+        border-radius: 0.8rem;
+        padding: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    .contact-form button{
+        padding: 1rem;
+        border-radius: 2.3rem;
+        font-size: 1.1rem;
+
+    }
+    .contact-link {
+        padding: 3rem 5rem;
+        width: 100%;
+        
+        
+    }
+    .contact-link .whatsup{
+        gap: 0.65rem;
+    }
+    .whatsup{
+        display: flex;
+        align-items: center;
+    }
+    .whatsup .contact-icon{
+        margin-bottom: 1.7rem;
+    }
+    .whatsup .contact-icon i{
+        
+        font-size: 3rem;
+    }
+    .whatsup .contact-info .name{
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .whatsup .contact-info .desc a{
+        font-size: 1.4rem
+    }
+}
